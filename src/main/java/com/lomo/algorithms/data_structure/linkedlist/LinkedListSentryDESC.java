@@ -1,4 +1,6 @@
-package com.lomo.algorithms.data_structure;
+package com.lomo.algorithms.data_structure.linkedlist;
+
+import com.lomo.algorithms.data_structure.LinkedList;
 
 /**
  * 引入哨兵的单链表 .
@@ -13,7 +15,7 @@ package com.lomo.algorithms.data_structure;
  * @DateTime: 2020/4/19 18:50
  * @Version: 1.0
  **/
-public class LinkedListSentry<T> implements LinkedList<T> {
+public class LinkedListSentryDESC<T> implements LinkedList<T> {
 
     private Node<T> head = new Node<T>(null);//头结点,哨兵填充首节点，head永远指向哨兵节点
     private Integer len=0;//记录节点数量，当然也可以不要，获取总数只有每次遍历
@@ -56,14 +58,14 @@ public class LinkedListSentry<T> implements LinkedList<T> {
      * @return
      */
     public T get(Integer index) {
-        if(index < 1){
+        if(len == 0 ||  index<0 || index+1 > len){
             return null;
         }
         Node<T> tmp = head;
         int i=len;//这里反向取数据
         while(tmp.getNext()!=null){
             tmp = tmp.getNext();
-            if(i==index){
+            if(i==index+1){
                 return tmp.getData();
             }
             i--;

@@ -1,4 +1,6 @@
-package com.lomo.algorithms.data_structure;
+package com.lomo.algorithms.data_structure.linkedlist;
+
+import com.lomo.algorithms.data_structure.LinkedList;
 
 /**
  * 引入哨兵的单链表 . .
@@ -9,7 +11,7 @@ package com.lomo.algorithms.data_structure;
  * @DateTime: 2020/4/28 21:09
  * @Version: 1.0
  **/
-public class LinkedListSentry2<T> implements LinkedList<T> {
+public class LinkedListSentryASC<T> implements LinkedList<T> {
 
     private Node<T> head = new Node<T>(null);//头结点指向哨兵
     /*
@@ -52,11 +54,11 @@ public class LinkedListSentry2<T> implements LinkedList<T> {
     }
 
     public T get(Integer index) {
-        if(index>len){
+        if(len==0 || index<0 || index+1>len){
             return null;
         }
         //遍历链表找对应位置的
-        int i=1;
+        int i=0;
         Node<T> tmp = head;
         while (i<=index){
             tmp = tmp.next;

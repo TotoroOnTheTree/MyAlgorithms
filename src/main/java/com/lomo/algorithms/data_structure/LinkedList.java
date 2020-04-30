@@ -15,7 +15,7 @@ public interface LinkedList<T> {
     Boolean delete(T dd);
 
     /**
-     * 获取元素，index 从1开始
+     * 获取元素，index 从0开始
      * @param index
      * @return
      */

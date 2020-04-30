@@ -1,4 +1,6 @@
-package com.lomo.algorithms.data_structure;
+package com.lomo.algorithms.data_structure.linkedlist;
+
+import com.lomo.algorithms.data_structure.LinkedList;
 
 /**
  * 单链表 .
@@ -7,7 +9,7 @@ package com.lomo.algorithms.data_structure;
  * @DateTime: 2020/4/19 17:10
  * @Version: 1.0
  **/
-public class LinkedListISimple<T> implements LinkedList<T>{
+public class LinkedListISimple<T> implements LinkedList<T> {
 
     private Integer len = 0;//长度
     private Node<T> head ;//头结点
@@ -68,12 +70,12 @@ public class LinkedListISimple<T> implements LinkedList<T>{
      * @return
      */
     public T get(Integer index) {
-        if(len==0 || index > len){
+        if(len==0 ||  index<0 || index+1 > len){
             return null;
         }
         Node<T> tmp = head;
         for (int i=0; i<len;i++){
-            if(i== index -1){
+            if(i== index){
                 return tmp.getData();
             }
             tmp = tmp.next;

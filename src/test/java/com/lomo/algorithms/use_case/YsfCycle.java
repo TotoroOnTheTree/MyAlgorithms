@@ -3,7 +3,8 @@ package com.lomo.algorithms.use_case;
 import org.junit.jupiter.api.Test;
 
 /**
- * 约瑟夫环问题，使用公式解决 .
+ * 约瑟夫环问题，使用公式 f(n,m) = (f(n-1,m)+m)%n 解决 .
+ *
  *
  * @Author: xumao
  * @DateTime: 2020/5/12 0:15
